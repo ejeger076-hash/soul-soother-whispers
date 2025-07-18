@@ -8,48 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Soft pastel color palette for mental wellness */
-    --background: 315 25% 97%;
-    --foreground: 280 15% 25%;
+    /* Gen Z minimalist color palette - soothing and modern */
+    --background: 252 100% 99%;
+    --foreground: 237 13% 25%;
 
-    --card: 315 20% 98%;
-    --card-foreground: 280 15% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 237 13% 25%;
 
-    --popover: 315 20% 98%;
-    --popover-foreground: 280 15% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 237 13% 25%;
 
-    --primary: 280 65% 75%;
+    --primary: 262 52% 47%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 315 15% 92%;
-    --secondary-foreground: 280 15% 25%;
+    --secondary: 39 77% 94%;
+    --secondary-foreground: 237 13% 25%;
 
-    --muted: 315 12% 95%;
-    --muted-foreground: 280 8% 55%;
+    --muted: 252 100% 97%;
+    --muted-foreground: 237 13% 65%;
 
-    --accent: 300 50% 88%;
-    --accent-foreground: 280 15% 25%;
+    --accent: 330 100% 94%;
+    --accent-foreground: 237 13% 25%;
 
-    --destructive: 0 65% 75%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 315 12% 90%;
-    --input: 315 12% 95%;
-    --ring: 280 65% 75%;
+    --border: 252 100% 94%;
+    --input: 252 100% 94%;
+    --ring: 262 52% 47%;
 
-    /* Custom colors for the app */
-    --teddy-primary: 280 65% 75%;
-    --teddy-secondary: 300 45% 85%;
-    --user-bubble: 260 60% 88%;
+    /* Custom Gen Z colors */
+    --lavender: 262 52% 47%;
+    --blush: 330 100% 94%;
+    --cream: 39 77% 94%;
+    --sky: 199 89% 85%;
+    
+    /* Chat specific colors */
+    --teddy-primary: 262 52% 47%;
+    --teddy-secondary: 330 100% 94%;
+    --user-bubble: 262 30% 88%;
     --teddy-bubble: 0 0% 100%;
-    --gradient-bg: linear-gradient(135deg, hsl(315 25% 97%), hsl(300 20% 95%));
-    --chat-bg: 315 20% 98%;
+    --chat-bg: 0 0% 100%;
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --bounce-gentle: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 

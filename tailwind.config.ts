@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['DM Sans', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -32,6 +35,10 @@ export default {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
+				lavender: 'hsl(var(--lavender))',
+				blush: 'hsl(var(--blush))',
+				cream: 'hsl(var(--cream))',
+				sky: 'hsl(var(--sky))',
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
@@ -117,6 +124,14 @@ export default {
 				'pulse-soft': {
 					'0%, 100%': { transform: 'scale(1)' },
 					'50%': { transform: 'scale(1.05)' }
+				},
+				'float-gentle': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'breathe': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' }
 				}
 			},
 			animation: {
@@ -125,7 +140,9 @@ export default {
 				'typing': 'typing 1.5s ease-in-out infinite',
 				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
 				'slide-up': 'slide-up 0.4s ease-out',
-				'pulse-soft': 'pulse-soft 2s ease-in-out infinite'
+				'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+				'float-gentle': 'float-gentle 6s ease-in-out infinite',
+				'breathe': 'breathe 4s ease-in-out infinite'
 			}
 		}
 	},
