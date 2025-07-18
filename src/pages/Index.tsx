@@ -3,82 +3,63 @@ import teddyAvatar from "@/assets/teddy-avatar.png";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-purple-50 to-pink-50 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-4 h-4 bg-pink-200/30 rounded-full animate-pulse"></div>
-        <div className="absolute top-32 right-20 w-3 h-3 bg-purple-200/40 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute top-40 left-1/3 w-2 h-2 bg-rose-200/50 rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-60 right-1/3 w-3 h-3 bg-pink-300/30 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-      </div>
-
+    <div className="min-h-screen bg-white">
       {/* Header Section */}
-      <div className="text-center pt-12 pb-8 px-4 relative">
+      <div className="text-center pt-16 pb-8 px-4">
         {/* Teddy Bear Image */}
         <div className="flex justify-center mb-8">
-          <div className="w-36 h-36 bg-gradient-to-br from-white to-pink-50 rounded-3xl shadow-lg shadow-pink-200/30 flex items-center justify-center border border-pink-100/50 backdrop-blur-sm">
-            <img 
-              src={teddyAvatar}
-              alt="Teddy Bear Companion" 
-              className="w-28 h-28 object-contain drop-shadow-md"
-            />
-          </div>
+          <img 
+            src={teddyAvatar}
+            alt="Healsoul.ai Teddy Bear Companion" 
+            className="w-32 h-32 object-contain"
+          />
         </div>
 
         {/* Tagline */}
-        <p className="text-purple-600/80 text-sm mb-6 font-medium tracking-wide">
-          ✨ always remember: you are not alone ✨
+        <p className="text-gray-600 text-sm mb-8 font-medium">
+          always remember: you are not alone
         </p>
 
         {/* Main Heading */}
-        <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-rose-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-3 leading-tight">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
           Talk. Feel. Heal.
         </h1>
         
         {/* Subheading */}
-        <h2 className="text-2xl md:text-3xl font-medium text-purple-700/90 mb-8 leading-relaxed">
-          With your coolest friend,<br />
-          <span className="text-pink-600">partner, parent.</span>
+        <h2 className="text-xl md:text-2xl text-gray-700 mb-8">
+          With your coolest friend, partner, parent.
         </h2>
 
         {/* Description */}
-        <p className="text-purple-600/70 max-w-2xl mx-auto mb-10 leading-relaxed text-lg">
+        <p className="text-gray-600 max-w-2xl mx-auto mb-8 text-base">
           Healsoul.ai is your digital companion for emotional clarity, self-healing,
           and music therapy based on your mood.
         </p>
 
         {/* Highlight Banner */}
-        <div className="max-w-3xl mx-auto mb-10">
-          <div className="bg-gradient-to-r from-pink-100/70 to-purple-100/70 border border-pink-200/50 rounded-2xl p-6 shadow-lg shadow-pink-200/20 backdrop-blur-sm">
-            <div className="flex flex-wrap justify-center gap-3 mb-3">
-              <span className="bg-white/90 px-4 py-2 rounded-full text-purple-700 font-medium text-sm shadow-sm border border-pink-200/30">
-                ✨ 100% Private
-              </span>
-              <span className="bg-white/90 px-4 py-2 rounded-full text-purple-700 font-medium text-sm shadow-sm border border-pink-200/30">
-                🔒 Encrypted
-              </span>
-              <span className="bg-white/90 px-4 py-2 rounded-full text-purple-700 font-medium text-sm shadow-sm border border-pink-200/30">
-                💜 Always Judgement-Free
-              </span>
-              <span className="bg-white/90 px-4 py-2 rounded-full text-purple-700 font-medium text-sm shadow-sm border border-pink-200/30">
-                🤗 Always Here for You ✨
-              </span>
+        <div className="max-w-4xl mx-auto mb-8">
+          <div className="bg-gray-50 border border-gray-200 rounded-xl p-4">
+            <div className="flex flex-wrap justify-center gap-2 text-sm text-gray-700">
+              <span>✨ 100% Private.</span>
+              <span>Encrypted.</span>
+              <span>Always Judgement-Free.</span>
+              <span>Always Here for You. ✨</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Chat Section */}
-      <div className="max-w-3xl mx-auto px-4 pb-12">
-        <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl shadow-purple-200/30 border border-pink-200/30 overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 pb-12">
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-lg overflow-hidden">
           <ChatInterface />
         </div>
       </div>
 
       {/* Footer */}
-      <footer className="text-center py-8 px-4 relative">
-        <p className="text-purple-600/60 text-sm font-medium">
-          Self-healing, reimagined. 💜
+      <footer className="text-center py-8 px-4">
+        <p className="text-gray-500 text-sm">
+          Self-healing, reimagined.
         </p>
       </footer>
     </div>
