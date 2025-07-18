@@ -59,7 +59,7 @@ export function Hero() {
           </div>
 
           {/* Chat Interface */}
-          <div className="animate-slide-up max-w-3xl mx-auto mb-8" style={{ animationDelay: '0.2s' }}>
+          <div className="animate-slide-up max-w-lg mx-auto mb-8" style={{ animationDelay: '0.2s' }}>
             <ChatInterfaceInline />
           </div>
 
@@ -75,9 +75,9 @@ export function Hero() {
 
 function ChatInterfaceInline() {
   return (
-    <Card className="bg-gradient-card border-border/50 shadow-soft p-8 rounded-3xl">
+    <Card className="bg-gradient-card border-border/50 shadow-soft p-4 rounded-3xl">
       {/* Embedded Chat Interface - Using your existing component */}
-      <div className="bg-background/50 rounded-2xl overflow-hidden">
+      <div className="bg-background/50 rounded-2xl overflow-hidden h-96">
         <ChatInterface />
       </div>
     </Card>
