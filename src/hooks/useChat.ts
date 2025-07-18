@@ -34,7 +34,7 @@ export const useChat = () => {
     try {
       // Send to webhook
       const response = await fetch(
-        "https://heasoul.app.n8n.cloud/webhook-test/59f7601f-22ad-437e-a4c1-303eb7a29f30",
+        "https://heasoul.app.n8n.cloud/webhook/59f7601f-22ad-437e-a4c1-303eb7a29f30",
         {
           method: "POST",
           headers: {
