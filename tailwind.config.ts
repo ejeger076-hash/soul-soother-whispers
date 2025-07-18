@@ -127,11 +127,11 @@ export default {
 				},
 				'float-gentle': {
 					'0%, 100%': { transform: 'translateY(0px)' },
-					'50%': { transform: 'translateY(-10px)' }
+					'50%': { transform: 'translateY(-6px)' }
 				},
 				'breathe': {
 					'0%, 100%': { transform: 'scale(1)' },
-					'50%': { transform: 'scale(1.05)' }
+					'50%': { transform: 'scale(1.02)' }
 				}
 			},
 			animation: {
@@ -140,9 +140,9 @@ export default {
 				'typing': 'typing 1.5s ease-in-out infinite',
 				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
 				'slide-up': 'slide-up 0.4s ease-out',
-				'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
-				'float-gentle': 'float-gentle 6s ease-in-out infinite',
-				'breathe': 'breathe 4s ease-in-out infinite'
+				'pulse-soft': 'pulse-soft 4s ease-in-out infinite',
+				'float-gentle': 'float-gentle 8s ease-in-out infinite',
+				'breathe': 'breathe 6s ease-in-out infinite'
 			}
 		}
 	},
