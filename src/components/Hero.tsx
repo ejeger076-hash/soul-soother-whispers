@@ -77,7 +77,7 @@ function ChatInterfaceInline() {
   return (
     <Card className="bg-gradient-card border-border/50 shadow-soft p-4 rounded-3xl">
       {/* Embedded Chat Interface - Using your existing component */}
-      <div className="bg-background/50 rounded-2xl overflow-hidden h-96">
+      <div className="bg-background/50 rounded-2xl overflow-hidden h-[32rem] flex flex-col">
         <ChatInterface />
       </div>
     </Card>
