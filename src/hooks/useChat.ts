@@ -48,11 +48,13 @@ export const useChat = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data = await response.text();
+      const data = await response.json();
       
       // Add teddy response with a delay for natural feel
       setTimeout(() => {
-        addMessage(data || "I'm here for you! 🧸 Tell me more about how you're feeling.", false);
+        const message = data.output || "I'm here for you! 🧸 Tell me more about how you're feeling.";
+        const formattedMessage = message.replace(/\\n/g, '\n');
+        addMessage(formattedMessage, false);
         setIsLoading(false);
       }, 1000);
 
