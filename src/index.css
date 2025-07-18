@@ -2,58 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Healsoul.ai Design System - Gen Z Pastel Mental Wellness Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Light and soft color palette - very gentle */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 20%;
+    /* Base colors - soft and comforting */
+    --background: 330 25% 98%;
+    --foreground: 240 15% 25%;
 
+    /* Card colors - gentle and inviting */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 20%;
+    --card-foreground: 240 15% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 20%;
+    --popover-foreground: 240 15% 25%;
 
-    --primary: 260 30% 70%;
+    /* Primary - soft lavender for trust and calm */
+    --primary: 260 35% 70%;
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 260 50% 85%;
 
-    --secondary: 30 50% 96%;
-    --secondary-foreground: 0 0% 20%;
+    /* Secondary - blush pink for warmth */
+    --secondary: 340 40% 85%;
+    --secondary-foreground: 240 15% 25%;
 
-    --muted: 0 0% 98%;
-    --muted-foreground: 0 0% 50%;
+    /* Muted - very light background tones */
+    --muted: 210 25% 95%;
+    --muted-foreground: 240 10% 50%;
 
-    --accent: 320 50% 96%;
-    --accent-foreground: 0 0% 20%;
+    /* Accent - mint green for positive actions */
+    --accent: 160 30% 75%;
+    --accent-foreground: 240 15% 25%;
+
+    /* Tertiary - butter yellow for highlights */
+    --tertiary: 45 60% 80%;
+    --tertiary-foreground: 240 15% 25%;
+
+    /* Sky blue for additional elements */
+    --sky: 200 40% 80%;
+    --sky-foreground: 240 15% 25%;
 
     --destructive: 0 60% 70%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 95%;
-    --input: 0 0% 97%;
-    --ring: 260 30% 70%;
+    --border: 220 20% 90%;
+    --input: 220 20% 90%;
+    --ring: 260 35% 70%;
 
-    /* Very light custom colors */
-    --lavender: 260 30% 80%;
-    --blush: 320 40% 97%;
-    --cream: 40 40% 97%;
-    --sky: 200 50% 95%;
-    
-    /* Chat specific colors */
-    --teddy-primary: 260 30% 80%;
-    --teddy-secondary: 320 40% 97%;
-    --user-bubble: 260 20% 95%;
-    --teddy-bubble: 0 0% 100%;
-    --chat-bg: 0 0% 100%;
-    
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Gradients for Gen Z aesthetic */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--secondary)));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--sky)));
 
-    --radius: 1rem;
+    /* Shadows for depth */
+    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.4);
+    --shadow-card: 0 8px 32px hsl(var(--foreground) / 0.08);
+
+    --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -117,6 +126,36 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
   }
+}
+
+/* Custom gradient classes */
+.bg-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.bg-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.bg-gradient-card {
+  background: var(--gradient-card);
+}
+
+.bg-gradient-accent {
+  background: var(--gradient-accent);
+}
+
+/* Custom shadow classes */
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+.shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
 }
