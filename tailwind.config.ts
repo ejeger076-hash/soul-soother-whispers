@@ -52,6 +52,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				teddy: {
+					primary: 'hsl(var(--teddy-primary))',
+					secondary: 'hsl(var(--teddy-secondary))',
+					bubble: 'hsl(var(--teddy-bubble))'
+				},
+				user: {
+					bubble: 'hsl(var(--user-bubble))'
+				},
+				chat: {
+					bg: 'hsl(var(--chat-bg))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +95,37 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'typing': {
+					'0%, 60%': { opacity: '1' },
+					'30%': { opacity: '0.4' },
+				},
+				'bounce-gentle': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-4px)' }
+				},
+				'slide-up': {
+					'0%': { 
+						opacity: '0', 
+						transform: 'translateY(20px)' 
+					},
+					'100%': { 
+						opacity: '1', 
+						transform: 'translateY(0)' 
+					}
+				},
+				'pulse-soft': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.05)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'typing': 'typing 1.5s ease-in-out infinite',
+				'bounce-gentle': 'bounce-gentle 2s ease-in-out infinite',
+				'slide-up': 'slide-up 0.4s ease-out',
+				'pulse-soft': 'pulse-soft 2s ease-in-out infinite'
 			}
 		}
 	},
