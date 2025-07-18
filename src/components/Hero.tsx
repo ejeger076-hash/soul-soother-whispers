@@ -39,7 +39,7 @@ export function Hero() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 animate-fade-in">
             Talk. Feel. Heal.
             <br />
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
+            <span className="text-primary">
               With your coolest friend, partner, parent.
             </span>
           </h1>
