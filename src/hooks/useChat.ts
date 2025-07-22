@@ -1,3 +1,4 @@
+
 import { useState, useCallback } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -27,33 +28,41 @@ export const useChat = () => {
   const sendMessage = useCallback(async (userMessage: string) => {
     if (isLoading) return;
 
+    console.log("Sending message:", userMessage);
+    
     // Add user message
     addMessage(userMessage, true);
     setIsLoading(true);
 
     try {
+      const webhookUrl = "https://heasoul.app.n8n.cloud/webhook/59f7601f-22ad-437e-a4c1-303eb7a29f30";
+      console.log("Making request to webhook:", webhookUrl);
+      
       // Send to webhook
-      const response = await fetch(
-        "https://heasoul.app.n8n.cloud/webhook/59f7601f-22ad-437e-a4c1-303eb7a29f30",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ message: userMessage }),
-        }
-      );
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: userMessage }),
+      });
+
+      console.log("Response status:", response.status);
+      console.log("Response headers:", response.headers);
 
       if (!response.ok) {
+        console.error("HTTP error! status:", response.status);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
+      console.log("Response data:", data);
       
       // Add teddy response with a delay for natural feel
       setTimeout(() => {
         const message = data.output || "I'm here for you! 🧸 Tell me more about how you're feeling.";
         const formattedMessage = message.replace(/\\n/g, '\n');
+        console.log("Adding AI response:", formattedMessage);
         addMessage(formattedMessage, false);
         setIsLoading(false);
       }, 1000);
