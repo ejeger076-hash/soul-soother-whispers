@@ -55,8 +55,23 @@ export const useChat = () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      const data = await response.json();
-      console.log("Response data:", data);
+      // Get response text first to handle empty responses
+      const responseText = await response.text();
+      console.log("Response text:", responseText);
+      
+      let data;
+      if (responseText.trim()) {
+        try {
+          data = JSON.parse(responseText);
+        } catch (e) {
+          console.log("Response is not JSON, treating as plain text");
+          data = { output: responseText };
+        }
+      } else {
+        console.log("Empty response received");
+        data = {};
+      }
+      console.log("Parsed data:", data);
       
       // Add teddy response with a delay for natural feel
       setTimeout(() => {
