@@ -38,9 +38,10 @@ export const useChat = () => {
       const webhookUrl = "https://heasoul.app.n8n.cloud/webhook-test/59f7601f-22ad-437e-a4c1-303eb7a29f30";
       console.log("Making request to webhook:", webhookUrl);
       
-      // Send to webhook
+      // Send to webhook with additional options for CORS
       const response = await fetch(webhookUrl, {
         method: "POST",
+        mode: "cors",
         headers: {
           "Content-Type": "application/json",
         },
@@ -84,6 +85,8 @@ export const useChat = () => {
 
     } catch (error) {
       console.error("Error sending message:", error);
+      console.error("Error type:", error.constructor.name);
+      console.error("Error message:", error.message);
       
       // Fallback response when webhook fails
       setTimeout(() => {
