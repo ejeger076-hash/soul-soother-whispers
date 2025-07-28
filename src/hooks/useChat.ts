@@ -35,7 +35,7 @@ export const useChat = () => {
     setIsLoading(true);
 
     try {
-      const webhookUrl = "https://heasoul.app.n8n.cloud/webhook-test/59f7601f-22ad-437e-a4c1-303eb7a29f30";
+      const webhookUrl = "https://heasoul.app.n8n.cloud/webhook/59f7601f-22ad-437e-a4c1-303eb7a29f30";
       console.log("Making request to webhook:", webhookUrl);
       
       // Send to webhook with additional options for CORS
