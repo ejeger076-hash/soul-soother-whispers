@@ -50,31 +50,31 @@ export const MemoryGame = () => {
   useEffect(() => {
     if (flippedCards.length === 2) {
       const [first, second] = flippedCards;
-      setMoves(prev => prev + 1);
+      const currentMoves = moves + 1;
+      setMoves(currentMoves);
 
       if (cards[first].image === cards[second].image) {
         // Match found
         setTimeout(() => {
-          setCards(prev => prev.map(card => 
-            card.id === first || card.id === second 
-              ? { ...card, isMatched: true }
-              : card
-          ));
+          setCards(prev => {
+            const newCards = prev.map(card => 
+              card.id === first || card.id === second 
+                ? { ...card, isMatched: true }
+                : card
+            );
+            
+            // Check if game is complete
+            if (newCards.every(card => card.isMatched)) {
+              setIsGameComplete(true);
+              toast({
+                title: "Congratulations! 🎉",
+                description: `You completed the memory game in ${currentMoves} moves! Your mind is getting stronger.`,
+              });
+            }
+            
+            return newCards;
+          });
           setFlippedCards([]);
-          
-          // Check if game is complete
-          const newCards = cards.map(card => 
-            card.id === first || card.id === second 
-              ? { ...card, isMatched: true }
-              : card
-          );
-          if (newCards.every(card => card.isMatched)) {
-            setIsGameComplete(true);
-            toast({
-              title: "Congratulations! 🎉",
-              description: `You completed the memory game in ${moves + 1} moves! Your mind is getting stronger.`,
-            });
-          }
         }, 1000);
       } else {
         // No match
@@ -88,7 +88,7 @@ export const MemoryGame = () => {
         }, 1000);
       }
     }
-  }, [flippedCards, cards, moves, toast]);
+  }, [flippedCards]);
 
   const handleCardClick = (cardId: number) => {
     if (flippedCards.length === 2 || cards[cardId].isFlipped || cards[cardId].isMatched) {
