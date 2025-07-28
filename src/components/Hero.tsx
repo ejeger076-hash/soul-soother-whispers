@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Send, Heart } from "lucide-react";
 import teddyAvatar from "@/assets/teddy-avatar.png";
 import { ChatInterface } from "@/components/ChatInterface";
+import { HealingGames } from "./HealingGames";
 
 export function Hero() {
   return (
@@ -56,6 +57,11 @@ export function Hero() {
                 <span className="text-primary">✨</span> 100% Private. Encrypted. Always Judgement-Free. Always Here for You. <span className="text-primary">✨</span>
               </p>
             </div>
+          </div>
+
+          {/* Healing Games */}
+          <div className="animate-slide-up max-w-4xl mx-auto mb-8" style={{ animationDelay: '0.15s' }}>
+            <HealingGames />
           </div>
 
           {/* Chat Interface */}
