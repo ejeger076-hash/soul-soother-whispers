@@ -21,7 +21,7 @@ export const ChatInput = ({ onSendMessage, disabled = false }: ChatInputProps) =
 
   const quickResponses = [
     "I'm feeling anxious",
-    "Suggest music for my mood", 
+    "Help me track my mood",
     "I just want to talk"
   ];
 

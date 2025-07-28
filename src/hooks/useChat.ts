@@ -34,6 +34,20 @@ export const useChat = () => {
     addMessage(userMessage, true);
     setIsLoading(true);
 
+    // Check if user wants mood tracking
+    if (userMessage.toLowerCase().includes("track my mood") || 
+        userMessage.toLowerCase().includes("mood tracker") ||
+        userMessage.toLowerCase().includes("help me track my mood")) {
+      setTimeout(() => {
+        addMessage(
+          "I'd love to help you track your mood! 🧸 Understanding your feelings is such an important part of your healing journey. Let's check in together: [MOOD_TRACKER]",
+          false
+        );
+        setIsLoading(false);
+      }, 1000);
+      return;
+    }
+
     try {
       const webhookUrl = "https://heasoul.app.n8n.cloud/webhook/59f7601f-22ad-437e-a4c1-303eb7a29f30";
       console.log("Making request to webhook:", webhookUrl);
