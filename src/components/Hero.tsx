@@ -96,6 +96,14 @@ function MoodCheckInWrapper() {
   const handleMoodSubmit = (moodId: string, moodLabel: string) => {
     const moodMessage = `I'm feeling ${moodLabel.toLowerCase()} right now.`;
     sendMessage(moodMessage);
+    
+    // If sad mood is selected, follow up with game suggestion
+    if (moodId === "sad") {
+      setTimeout(() => {
+        // This will trigger a special response from the AI for sad moods
+        sendMessage("__SAD_MOOD_TRIGGER__");
+      }, 1000);
+    }
   };
 
   return <MoodCheckIn onMoodSubmit={handleMoodSubmit} />;

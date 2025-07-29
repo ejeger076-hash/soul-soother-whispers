@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import teddyAvatar from "@/assets/teddy-avatar.png";
 import { MoodTracker } from "@/components/MoodTracker";
+import { MemoryGame } from "@/components/MemoryGame";
 
 interface ChatMessageProps {
   message: string;
@@ -13,9 +14,10 @@ export const ChatMessage = ({ message, isUser, isTyping = false, showAvatar = tr
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  // Check if message contains mood tracker trigger
+  // Check if message contains special triggers
   const shouldShowMoodTracker = !isUser && message.includes("[MOOD_TRACKER]");
-  const cleanMessage = message.replace("[MOOD_TRACKER]", "").trim();
+  const shouldShowMemoryGame = !isUser && message.includes("[MEMORY_GAME]");
+  const cleanMessage = message.replace("[MOOD_TRACKER]", "").replace("[MEMORY_GAME]", "").trim();
   
   // Typing animation for teddy messages
   useEffect(() => {
@@ -73,7 +75,7 @@ export const ChatMessage = ({ message, isUser, isTyping = false, showAvatar = tr
         rounded-2xl px-4 py-3 shadow-sm
         ${isUser 
           ? 'bg-user-bubble text-foreground rounded-tr-md max-w-[75%]' 
-          : `bg-teddy-bubble text-foreground rounded-tl-md border border-border/30 ${shouldShowMoodTracker ? 'max-w-[85%]' : 'max-w-[75%]'}`
+          : `bg-teddy-bubble text-foreground rounded-tl-md border border-border/30 ${shouldShowMoodTracker || shouldShowMemoryGame ? 'max-w-[85%]' : 'max-w-[75%]'}`
         }
       `}>
         <p className="text-sm leading-relaxed font-medium">
@@ -86,6 +88,12 @@ export const ChatMessage = ({ message, isUser, isTyping = false, showAvatar = tr
         {shouldShowMoodTracker && currentIndex >= cleanMessage.length && (
           <div className="mt-4 animate-fade-in">
             <MoodTracker />
+          </div>
+        )}
+        
+        {shouldShowMemoryGame && currentIndex >= cleanMessage.length && (
+          <div className="mt-4 animate-fade-in">
+            <MemoryGame />
           </div>
         )}
       </div>

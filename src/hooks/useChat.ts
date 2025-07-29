@@ -30,6 +30,16 @@ export const useChat = () => {
 
     console.log("Sending message:", userMessage);
     
+    // Handle special sad mood trigger without adding as user message
+    if (userMessage === "__SAD_MOOD_TRIGGER__") {
+      setIsLoading(true);
+      setTimeout(() => {
+        addMessage("I notice you're feeling sad right now. Would you like to play a calming memory game? It can help lift your spirits and give your mind something gentle to focus on. 🎮💙\n\n[MEMORY_GAME]", false);
+        setIsLoading(false);
+      }, 1500);
+      return;
+    }
+    
     // Add user message
     addMessage(userMessage, true);
     setIsLoading(true);
