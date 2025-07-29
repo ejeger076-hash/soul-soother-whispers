@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Send, Heart } from "lucide-react";
 import teddyAvatar from "@/assets/teddy-avatar.png";
 import { ChatInterface } from "@/components/ChatInterface";
+import { MoodCheckIn } from "./MoodCheckIn";
+import { useChat } from "@/hooks/useChat";
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
@@ -57,8 +59,13 @@ export function Hero() {
             </div>
           </div>
 
+          {/* Mood Check-in */}
+          <div className="animate-slide-up max-w-lg mx-auto mb-4" style={{ animationDelay: '0.15s' }}>
+            <MoodCheckInWrapper />
+          </div>
+
           {/* Chat Interface */}
-          <div className="animate-slide-up max-w-lg mx-auto mb-8" style={{ animationDelay: '0.15s' }}>
+          <div className="animate-slide-up max-w-lg mx-auto mb-8" style={{ animationDelay: '0.2s' }}>
             <ChatInterfaceInline />
           </div>
 
@@ -81,4 +88,15 @@ function ChatInterfaceInline() {
       </div>
     </Card>
   );
+}
+
+function MoodCheckInWrapper() {
+  const { sendMessage } = useChat();
+  
+  const handleMoodSubmit = (moodId: string, moodLabel: string) => {
+    const moodMessage = `I'm feeling ${moodLabel.toLowerCase()} right now.`;
+    sendMessage(moodMessage);
+  };
+
+  return <MoodCheckIn onMoodSubmit={handleMoodSubmit} />;
 }
