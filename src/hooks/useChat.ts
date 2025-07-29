@@ -121,7 +121,7 @@ export const useChat = () => {
 
   const initializeChat = useCallback(() => {
     if (messages.length === 0) {
-      addMessage("Hey! 🧸 I'm always here for you. How are you feeling today?", false);
+      addMessage("Hey! 🧸 I'm always here for you. Would you like to play some games to calm down? How are you feeling today?", false);
     }
   }, [messages.length, addMessage]);
 

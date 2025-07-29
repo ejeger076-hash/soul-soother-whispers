@@ -3,11 +3,17 @@ import { ChatMessage } from "./ChatMessage";
 import { ChatInput } from "./ChatInput";
 import { useChat } from "@/hooks/useChat";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { MoodCheckIn } from "./MoodCheckIn";
 import teddyAvatar from "@/assets/teddy-avatar.png";
 
 export const ChatInterface = () => {
   const { messages, isLoading, sendMessage, initializeChat } = useChat();
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const handleMoodSubmit = (moodId: string, moodLabel: string) => {
+    const moodMessage = `I'm feeling ${moodLabel.toLowerCase()} right now.`;
+    sendMessage(moodMessage);
+  };
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -63,6 +69,11 @@ export const ChatInterface = () => {
           <div ref={messagesEndRef} />
         </div>
       </ScrollArea>
+
+      {/* Mood Check-in */}
+      <div className="max-w-2xl mx-auto w-full px-4 mb-2">
+        <MoodCheckIn onMoodSubmit={handleMoodSubmit} />
+      </div>
 
       {/* Input Area */}
       <div className="max-w-2xl mx-auto w-full">

@@ -5,8 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Send, Heart } from "lucide-react";
 import teddyAvatar from "@/assets/teddy-avatar.png";
 import { ChatInterface } from "@/components/ChatInterface";
-import { HealingGames } from "./HealingGames";
-
 export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
@@ -59,13 +57,8 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Healing Games */}
-          <div className="animate-slide-up max-w-4xl mx-auto mb-8" style={{ animationDelay: '0.15s' }}>
-            <HealingGames />
-          </div>
-
           {/* Chat Interface */}
-          <div className="animate-slide-up max-w-lg mx-auto mb-8" style={{ animationDelay: '0.2s' }}>
+          <div className="animate-slide-up max-w-lg mx-auto mb-8" style={{ animationDelay: '0.15s' }}>
             <ChatInterfaceInline />
           </div>
 
