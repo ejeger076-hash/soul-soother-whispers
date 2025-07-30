@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Healsoul.ai Design System - Gen Z Pastel Mental Wellness Theme
+/* PrideSoul Design System - LGBTQ+ Pride Mental Wellness Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    /* Base colors - soft and comforting */
-    --background: 330 25% 98%;
+    /* Base colors - soft pastels with rainbow undertones */
+    --background: 320 25% 96%;
     --foreground: 240 15% 25%;
 
     /* Card colors - gentle and inviting */
@@ -19,50 +19,85 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 240 15% 25%;
 
-    /* Primary - soft lavender for trust and calm */
-    --primary: 260 35% 70%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 260 50% 85%;
+    /* Pride rainbow palette - soft and affirming */
+    --pride-red: 0 75% 70%;
+    --pride-orange: 25 85% 70%;
+    --pride-yellow: 50 85% 75%;
+    --pride-green: 140 60% 60%;
+    --pride-blue: 210 75% 70%;
+    --pride-indigo: 250 75% 75%;
+    --pride-violet: 280 75% 80%;
 
-    /* Secondary - blush pink for warmth */
-    --secondary: 340 40% 85%;
+    /* Primary - soft magenta/pink for love and acceptance */
+    --primary: 320 60% 75%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 320 70% 85%;
+
+    /* Secondary - lavender for calm and safety */
+    --secondary: 280 40% 85%;
     --secondary-foreground: 240 15% 25%;
 
     /* Muted - very light background tones */
-    --muted: 210 25% 95%;
+    --muted: 320 15% 94%;
     --muted-foreground: 240 10% 50%;
 
-    /* Accent - mint green for positive actions */
-    --accent: 160 30% 75%;
+    /* Accent - mint for positive actions */
+    --accent: 160 35% 75%;
     --accent-foreground: 240 15% 25%;
 
-    /* Tertiary - butter yellow for highlights */
-    --tertiary: 45 60% 80%;
+    /* Tertiary - soft blue for highlights */
+    --tertiary: 210 50% 80%;
     --tertiary-foreground: 240 15% 25%;
 
     /* Sky blue for additional elements */
-    --sky: 200 40% 80%;
+    --sky: 200 50% 80%;
     --sky-foreground: 240 15% 25%;
+
+    /* Voice interaction colors */
+    --voice-listening: 140 60% 60%;
+    --voice-pulse: 250 75% 75%;
+    --voice-ripple: 320 60% 75%;
 
     --destructive: 0 60% 70%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 90%;
-    --input: 220 20% 90%;
-    --ring: 260 35% 70%;
+    --border: 320 20% 88%;
+    --input: 320 20% 90%;
+    --ring: 320 60% 75%;
 
-    /* Gradients for Gen Z aesthetic */
+    /* Pride gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--secondary)));
+    --gradient-hero: linear-gradient(135deg, 
+      hsl(320 40% 94%) 0%, 
+      hsl(280 35% 92%) 25%,
+      hsl(210 40% 94%) 50%,
+      hsl(160 30% 92%) 75%,
+      hsl(50 40% 94%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--sky)));
+    --gradient-rainbow: linear-gradient(90deg, 
+      hsl(var(--pride-red)) 0%,
+      hsl(var(--pride-orange)) 16.66%,
+      hsl(var(--pride-yellow)) 33.33%,
+      hsl(var(--pride-green)) 50%,
+      hsl(var(--pride-blue)) 66.66%,
+      hsl(var(--pride-indigo)) 83.33%,
+      hsl(var(--pride-violet)) 100%);
+    --gradient-voice-aura: radial-gradient(circle, 
+      hsl(var(--pride-red) / 0.3) 0%,
+      hsl(var(--pride-orange) / 0.3) 16%,
+      hsl(var(--pride-yellow) / 0.3) 33%,
+      hsl(var(--pride-green) / 0.3) 50%,
+      hsl(var(--pride-blue) / 0.3) 66%,
+      hsl(var(--pride-indigo) / 0.3) 83%,
+      hsl(var(--pride-violet) / 0.3) 100%);
 
-    /* Shadows for depth */
-    --shadow-soft: 0 4px 20px hsl(var(--primary) / 0.15);
-    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.4);
+    /* Shadows for depth with pride colors */
+    --shadow-soft: 0 8px 32px hsl(320 40% 85% / 0.3);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-voice: 0 0 60px hsl(var(--voice-pulse) / 0.6);
     --shadow-card: 0 8px 32px hsl(var(--foreground) / 0.08);
 
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -143,8 +178,12 @@ All colors MUST be HSL.
   background: var(--gradient-card);
 }
 
-.bg-gradient-accent {
-  background: var(--gradient-accent);
+.bg-gradient-rainbow {
+  background: var(--gradient-rainbow);
+}
+
+.bg-gradient-voice-aura {
+  background: var(--gradient-voice-aura);
 }
 
 /* Custom shadow classes */

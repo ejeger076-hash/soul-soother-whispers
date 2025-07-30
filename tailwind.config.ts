@@ -44,6 +44,22 @@ export default {
 					DEFAULT: 'hsl(var(--sky))',
 					foreground: 'hsl(var(--sky-foreground))'
 				},
+				// Pride rainbow colors
+				pride: {
+					red: 'hsl(var(--pride-red))',
+					orange: 'hsl(var(--pride-orange))',
+					yellow: 'hsl(var(--pride-yellow))',
+					green: 'hsl(var(--pride-green))',
+					blue: 'hsl(var(--pride-blue))',
+					indigo: 'hsl(var(--pride-indigo))',
+					violet: 'hsl(var(--pride-violet))'
+				},
+				// Voice interaction colors
+				voice: {
+					listening: 'hsl(var(--voice-listening))',
+					pulse: 'hsl(var(--voice-pulse))',
+					ripple: 'hsl(var(--voice-ripple))'
+				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
@@ -121,6 +137,37 @@ export default {
 				'slide-up': {
 					'0%': { opacity: '0', transform: 'translateY(40px)' },
 					'100%': { opacity: '1', transform: 'translateY(0)' }
+				},
+				'pride-pulse': {
+					'0%, 100%': { 
+						transform: 'scale(1)',
+						opacity: '0.7'
+					},
+					'50%': { 
+						transform: 'scale(1.05)',
+						opacity: '1'
+					}
+				},
+				'voice-ripple': {
+					'0%': { 
+						transform: 'scale(1)',
+						opacity: '1'
+					},
+					'100%': { 
+						transform: 'scale(1.4)',
+						opacity: '0'
+					}
+				},
+				'rainbow-flow': {
+					'0%, 100%': { 
+						filter: 'hue-rotate(0deg)'
+					},
+					'33%': { 
+						filter: 'hue-rotate(120deg)'
+					},
+					'66%': { 
+						filter: 'hue-rotate(240deg)'
+					}
 				}
 			},
 			animation: {
@@ -131,7 +178,10 @@ export default {
 				'float': 'float 4s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite alternate',
 				'fade-in': 'fade-in 0.6s ease-out',
-				'slide-up': 'slide-up 0.8s ease-out'
+				'slide-up': 'slide-up 0.8s ease-out',
+				'pride-pulse': 'pride-pulse 2s ease-in-out infinite',
+				'voice-ripple': 'voice-ripple 1.5s ease-out infinite',
+				'rainbow-flow': 'rainbow-flow 3s ease-in-out infinite'
 			}
 		}
 	},
